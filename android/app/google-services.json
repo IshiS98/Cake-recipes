@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "41002467791",
+    "project_id": "ishicakerecipes",
+    "storage_bucket": "ishicakerecipes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41002467791:android:e508d152d27b7a2d0592ba",
+        "android_client_info": {
+          "package_name": "com.ishicakerecipes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41002467791-co2q4k5inelamc891n20in9gh7df3t90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5Zn5bDnBcQGe5zbuTXAR6vFmakPQtOqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41002467791-co2q4k5inelamc891n20in9gh7df3t90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
