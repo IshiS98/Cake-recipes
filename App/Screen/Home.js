@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import {
   View,
   StyleSheet,
+  Image,
   Text,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
+import Images from '../Configs/Images';
 
 export default class Home extends Component {
   constructor() {
@@ -46,6 +48,7 @@ export default class Home extends Component {
           <Text style={styles.Text1}>Welcome</Text>
           <Text style={styles.Text2}>to</Text>
           <Text style={styles.Text}>Ishi Cake recipes Home</Text>
+          <Image source={Images.Home} style={styles.Image} />
           <TouchableOpacity onPress={this.onMenu} style={styles.button2}>
             <Text>Menu</Text>
           </TouchableOpacity>
@@ -69,7 +72,7 @@ const styles = StyleSheet.create({
   },
   TextInput: {
     width: '50%',
-    marginTop: 20,
+    marginTop: 10,
     borderWidth: 2,
     borderColor: '#000000',
     fontSize: 20,
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
     color: '#000000',
-    marginTop: 10,
+    marginTop: 8,
     width: '80%',
     marginLeft: 140,
   },
@@ -103,12 +106,12 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: '#000000',
-    marginBottom: 30,
+    marginBottom: 10,
     width: '80%',
   },
   Image: {
     width: 240,
-    height: 200,
+    height: 260,
   },
   button2: {
     width: '40%',
