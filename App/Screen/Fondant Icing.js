@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Image, Text} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Images from '../Configs/Images';
 
