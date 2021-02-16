@@ -1,12 +1,6 @@
 import React, {Component} from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
+
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import Images from '../Configs/Images';
 
 export default class Home extends Component {
@@ -16,19 +10,19 @@ export default class Home extends Component {
       TextInput: '',
     };
   }
-  onChangeSearch = (text) => {
-    console.log(text);
-  };
-  onTextInput = () => {
-    this.props.navigation.navigate('Cake');
+
+  onicon = () => {
+    this.props.navigation.navigate('drawermenu');
   };
 
   onMenu = () => {
     this.props.navigation.navigate('Menu');
   };
-  onRecipesBook = () => {
-    this.props.navigation.navigate('RecipesBook');
+
+  onSmartRecipesBook = () => {
+    this.props.navigation.navigate('SmartRecipesBook');
   };
+
   onLogout = () => {
     ('Logout');
   };
@@ -37,14 +31,6 @@ export default class Home extends Component {
     return (
       <>
         <View style={styles.container}>
-          <TextInput
-            value={this.state.Email}
-            onChangeText={this.onchangeEmail}
-            style={styles.TextInput}
-            placeholder="Search"
-          />
-          <TouchableOpacity onPress={this.placeholder} style={styles.button1} />
-
           <Text style={styles.Text1}>Welcome</Text>
           <Text style={styles.Text2}>to</Text>
           <Text style={styles.Text}>Ishi Cake recipes Home</Text>
@@ -52,10 +38,12 @@ export default class Home extends Component {
           <TouchableOpacity onPress={this.onMenu} style={styles.button2}>
             <Text>Menu</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.onRecipesBook} style={styles.button3}>
-            <Text>Recipes Book</Text>
+          <TouchableOpacity
+            onPress={this.onSmartRecipesBook}
+            style={styles.button3}>
+            <Text>Smart Recipes Book</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={this.Logout} style={styles.button4}>
+          <TouchableOpacity onPress={this.onLogout} style={styles.button4}>
             <Text>Log out</Text>
           </TouchableOpacity>
         </View>
@@ -113,6 +101,9 @@ const styles = StyleSheet.create({
     width: 240,
     height: 260,
   },
+  button: {
+    marginRight: 300,
+  },
   button2: {
     width: '40%',
     borderWidth: 2,
@@ -124,7 +115,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   button3: {
-    width: '40%',
+    width: '50%',
     borderWidth: 2,
     padding: 15,
     marginTop: 10,

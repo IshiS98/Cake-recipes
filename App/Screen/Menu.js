@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
-
 export default class Home extends Component {
   constructor() {
     super();
   }
+  static navigationOptions = {
+    drawerLabel: 'Menu',
+  };
 
+  onicon = () => {
+    this.props.navigation.navigate('Home');
+  };
   onCakes = () => {
     this.props.navigation.navigate('Cakes');
   };

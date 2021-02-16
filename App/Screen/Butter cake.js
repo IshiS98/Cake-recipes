@@ -4,6 +4,9 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Images from '../Configs/Images';
 
 export default class Home extends Component {
+  onicon = () => {
+    this.props.navigation.navigate('Cakes');
+  };
   render() {
     return (
       <>
@@ -73,5 +76,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 8,
     marginLeft: 30,
+  },
+  icon: {
+    width: 30,
+    height: 30,
+    marginLeft: 4,
   },
 });
