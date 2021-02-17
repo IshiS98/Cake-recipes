@@ -9,7 +9,6 @@ const Images = {
   ButterIcing: require('../Assets/Images/butterIcing.png'),
   ChoclateIcing: require('../Assets/Images/chocalateIcing.png'),
   FondantIcing: require('../Assets/Images/FondantIcing.png'),
-  Hamburgericon: require('../Assets/Images/Hamburgericon.png'),
-  Back: require('../Assets/Images/Back.png'),
+  dark: require('../Assets/Images/dark.png'),
 };
 export default Images;

@@ -4,16 +4,17 @@ import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import Images from '../Configs/Images';
 
 export default class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      TextInput: '',
+      toggle: true,
     };
   }
-
-  onicon = () => {
-    this.props.navigation.navigate('drawermenu');
-  };
+  toggleTheme() {
+    this.setState({
+      toggle: this.state.toggle ? false : true,
+    });
+  }
 
   onMenu = () => {
     this.props.navigation.navigate('Menu');
@@ -28,12 +29,18 @@ export default class Home extends Component {
   };
 
   render() {
+    const newLocal = {backgroundColor: this.state.toggle ? 'white' : 'black'};
+    const newLocal_1 = {color: this.state.toggle ? 'black' : 'white'};
     return (
       <>
-        <View style={styles.container}>
-          <Text style={styles.Text1}>Welcome</Text>
-          <Text style={styles.Text2}>to</Text>
-          <Text style={styles.Text}>Ishi Cake recipes Home</Text>
+        <View style={[styles.container, newLocal]}>
+          <TouchableOpacity onPress={() => this.toggleTheme()}>
+            <Image source={Images.dark} style={[styles.icon, newLocal_1]} />
+          </TouchableOpacity>
+
+          <Text style={[styles.Text1, newLocal_1]}>Welcome</Text>
+          <Text style={[styles.Text2, newLocal_1]}>to</Text>
+          <Text style={[styles.Text, newLocal_1]}>Ishi Cake recipes Home</Text>
           <Image source={Images.Home} style={styles.Image} />
           <TouchableOpacity onPress={this.onMenu} style={styles.button2}>
             <Text>Menu</Text>
@@ -57,6 +64,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   TextInput: {
     width: '50%',
@@ -132,5 +143,11 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  icon: {
+    width: 30,
+    height: 30,
+    marginRight: 310,
+    marginTop: 10,
   },
 });

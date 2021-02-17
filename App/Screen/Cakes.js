@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
-import {StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, Image, Text, TouchableOpacity, View} from 'react-native';
 import Images from '../Configs/Images';
 
 export default class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggle: true,
+    };
   }
+  toggleTheme() {
+    this.setState({
+      toggle: this.state.toggle ? false : true,
+    });
+  }
+
   onicon = () => {
     this.props.navigation.navigate('Menu');
   };
@@ -19,23 +28,36 @@ export default class Home extends Component {
     this.props.navigation.navigate('CoffeeCake');
   };
   render() {
+    const newLocal = {backgroundColor: this.state.toggle ? 'white' : 'black'};
+    const newLocal_1 = {color: this.state.toggle ? 'black' : 'white'};
     return (
       <>
-        <Image source={Images.Cake} style={styles.Image} />
-        <TouchableOpacity onPress={this.onButterCake}>
-          <Text style={styles.Text}>1.Butter Cake</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.onChocalateCake}>
-          <Text style={styles.Text}>2.Chocalate Cake</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.onCoffeeCake}>
-          <Text style={styles.Text}>3.Coffee Cake</Text>
-        </TouchableOpacity>
+        <View style={[styles.container, newLocal]}>
+          <TouchableOpacity onPress={() => this.toggleTheme()}>
+            <Image source={Images.dark} style={[styles.icon, newLocal_1]} />
+          </TouchableOpacity>
+          <Image source={Images.Cake} style={styles.Image} />
+          <TouchableOpacity onPress={this.onButterCake}>
+            <Text style={[styles.Text, newLocal_1]}>1.Butter Cake</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.onChocalateCake}>
+            <Text style={[styles.Text, newLocal_1]}>2.Chocalate Cake</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this.onCoffeeCake}>
+            <Text style={[styles.Text, newLocal_1]}>3.Coffee Cake</Text>
+          </TouchableOpacity>
+        </View>
       </>
     );
   }
 }
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    alignItems: 'center',
+  },
   Image: {
     width: '100%',
     height: 220,
@@ -52,6 +74,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 30,
     height: 30,
-    marginLeft: 4,
+    marginRight: 310,
+    marginTop: 10,
   },
 });
