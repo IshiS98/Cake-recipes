@@ -7,6 +7,7 @@ import {
   Alert,
   Text,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class Home extends Component {
   constructor() {
@@ -41,7 +42,9 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        <View style={styles.container}>
+        <LinearGradient
+          colors={['#FFFFFF', '#4AE5EC', '#2AB2B8', '#065D61']}
+          style={styles.container}>
           <Text style={styles.Text1}>Ishi Cake</Text>
           <Text style={styles.Text}>Recipes App</Text>
           <TextInput
@@ -63,7 +66,7 @@ export default class Home extends Component {
           <TouchableOpacity onPress={this.onLogin} style={styles.button2}>
             <Text>Login</Text>
           </TouchableOpacity>
-        </View>
+        </LinearGradient>
       </>
     );
   }
@@ -72,8 +75,6 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2AB2B8',
-    alignItems: 'center',
   },
   Text1: {
     fontSize: 40,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     color: '#000000',
     marginTop: 20,
     width: '50%',
-    marginLeft: -100,
+    marginLeft: 15,
   },
   Text: {
     fontSize: 29,
@@ -89,6 +90,7 @@ const styles = StyleSheet.create({
     color: '#000000',
     marginBottom: 30,
     width: '50%',
+    marginLeft: 100,
   },
   TextInput: {
     width: '80%',
@@ -97,6 +99,7 @@ const styles = StyleSheet.create({
     borderColor: '#000000',
     fontSize: 20,
     color: '#000000',
+    marginLeft: 20,
   },
   button: {
     width: '60%',
@@ -107,6 +110,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     fontWeight: 'bold',
+    marginLeft: 60,
   },
   button2: {
     width: '50%',
@@ -117,5 +121,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
+    marginLeft: 80,
   },
 });
