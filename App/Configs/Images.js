@@ -1,6 +1,5 @@
 const Images = {
   Home: require('../Assets/Images/Home.png'),
-  cake: require('../Assets/Images/cake2.png'),
   ButterCake: require('../Assets/Images/ButterCake.png'),
   ChocalateCake: require('../Assets/Images/chocalateC.png'),
   CofeeCake: require('../Assets/Images/cofeecake.png'),
