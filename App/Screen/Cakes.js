@@ -36,7 +36,7 @@ export default class Home extends Component {
           <TouchableOpacity onPress={() => this.toggleTheme()}>
             <Image source={Images.dark} style={[styles.icon, newLocal_1]} />
           </TouchableOpacity>
-          <Image source={Images.Cake} style={styles.Image} />
+          <Image source={Images.cake} style={styles.Image} />
           <TouchableOpacity onPress={this.onButterCake}>
             <Text style={[styles.Text, newLocal_1]}>1.Butter Cake</Text>
           </TouchableOpacity>
